@@ -85,8 +85,8 @@ function custom_build_prompt {
     local yellow_on_white="%K{white}%F{yellow}"
     local red_on_white="%K{white}%F{red}"
     local red_on_black="%K{black}%F{red}"
-    local black_on_red="%K{130}%F{black}"
-    local white_on_red="%K{130}%F{white}"
+    local black_on_red="%K{172}%F{black}"
+    local white_on_red="%K{172}%F{white}"
     local yellow_on_red="%K{red}%F{yellow}"
  
     # Flags
