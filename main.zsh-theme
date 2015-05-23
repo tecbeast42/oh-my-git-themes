@@ -40,8 +40,7 @@ unset -f _zsh_terminal_set_256color
 
 
 PROMPT='$(build_prompt)'
-RPROMPT='
-%{$reset_color%}%T %{$fg_bold[white]%} %{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%}'
+RPROMPT='%{$reset_color%}%T %{$fg_bold[white]%} %{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%}'
 
 function enrich_append {
     local flag=$1
