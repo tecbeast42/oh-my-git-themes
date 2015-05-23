@@ -23,7 +23,7 @@
 autoload -U colors && colors
 
 PROMPT='$(build_prompt)'
-RPROMPT='%{$reset_color%}%T %{$fg_bold[white]%} %n@%m%{$reset_color%}'
+RPROMPT='%{$reset_color%}%T %{$fg_bold[white]%} %{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%}'
 
 function enrich_append {
     local flag=$1
@@ -66,11 +66,11 @@ function custom_build_prompt {
 
     local black_on_white="%K{white}%F{black}"
     local yellow_on_white="%K{white}%F{yellow}"
-    local red_on_white="%K{white}%F{yellow}"
-    local red_on_black="%K{black}%F{yellow}"
-    local black_on_red="%K{yellow}%F{black}"
-    local white_on_red="%K{yellow}%F{white}"
-    local yellow_on_red="%K{yellow}%F{yellow}"
+    local red_on_white="%K{white}%F{red}"
+    local red_on_black="%K{black}%F{red}"
+    local black_on_red="%K{red}%F{black}"
+    local white_on_red="%K{red}%F{white}"
+    local yellow_on_red="%K{red}%F{yellow}"
  
     # Flags
     local omg_default_color_on="${black_on_white}"
