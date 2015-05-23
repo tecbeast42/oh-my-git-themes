@@ -70,7 +70,7 @@ function custom_build_prompt {
     local red_on_black="%K{black}%F{red}"
     local black_on_red="%K{yellow}%F{black}"
     local white_on_red="%K{yellow}%F{white}"
-    local yellow_on_red="%K{yellow}%F{yellow}"
+    local yellow_on_red="%K{red}%F{yellow}"
  
     # Flags
     local omg_default_color_on="${black_on_white}"
@@ -132,7 +132,7 @@ function custom_build_prompt {
             fi
         fi
         prompt+=$(enrich_append ${is_on_a_tag} "${omg_is_on_a_tag_symbol} ${tag_at_current_commit}" "${black_on_red}")
-        prompt+="%k%F{red}%k%f
+        prompt+="%k%F{yellow}%k%f
 ${omg_second_line}"
     else
         prompt="${omg_ungit_prompt}"
