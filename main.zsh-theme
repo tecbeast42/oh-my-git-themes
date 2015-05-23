@@ -23,7 +23,7 @@
 autoload -U colors && colors
 
 PROMPT='$(build_prompt)'
-RPROMPT='%{$reset_color%}%T %{$fg_bold[blue]%} %n@%m%{$reset_color%}'
+RPROMPT='%{$reset_color%}%T %{$fg_bold[white]%} %n@%m%{$reset_color%}'
 
 function enrich_append {
     local flag=$1
@@ -64,7 +64,7 @@ function custom_build_prompt {
     local original_prompt=$PS1
 
 
-    local black_on_white="%K{white}%F{black}"
+    local black_on_white="%K{white}%F{orange}"
     local yellow_on_white="%K{white}%F{yellow}"
     local red_on_white="%K{white}%F{red}"
     local red_on_black="%K{black}%F{red}"
