@@ -1,4 +1,4 @@
-: ${omg_ungit_prompt:="%{$fg_no_bold[yellow]%}%1~ %{$reset_color%}"}
+: ${omg_ungit_prompt:="%{$fg_no_bold[yellow]%}%3~ %{$reset_color%}"}
 : ${omg_second_line:="%~ • "}
 : ${omg_is_a_git_repo_symbol:=''}
 : ${omg_has_untracked_files_symbol:=''}        #                ?    
