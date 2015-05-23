@@ -20,7 +20,24 @@
 : ${omg_has_stashes_symbol:=''}
 : ${omg_has_action_in_progress_symbol:=''}     #                  
 
+#Load 256 colors
 autoload -U colors && colors
+_zsh_terminal_set_256color()
+{
+    [[ $TERM =~ "-256color$" ]] && return
+
+    # search through ncurses terminfo descriptions
+    for terminfos in "${HOME}/.terminfo" "/etc/terminfo" "/lib/terminfo" "/usr/share/terminfo" ; do
+        if [[ -e "$terminfos"/$TERM[1]/${TERM}-256color || \
+                -e "$terminfos"/${TERM}-256color ]] ; then
+            export TERM="${TERM}-256color"
+            return
+        fi
+    done
+}
+_zsh_terminal_set_256color
+unset -f _zsh_terminal_set_256color
+
 
 PROMPT='$(build_prompt)'
 RPROMPT='%{$reset_color%}%T %{$fg_bold[white]%} %{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%}'
@@ -68,8 +85,8 @@ function custom_build_prompt {
     local yellow_on_white="%K{white}%F{yellow}"
     local red_on_white="%K{white}%F{red}"
     local red_on_black="%K{black}%F{red}"
-    local black_on_red="%K{208}%F{black}"
-    local white_on_red="%K{208}%F{white}"
+    local black_on_red="%K{202}%F{black}"
+    local white_on_red="%K{202}%F{white}"
     local yellow_on_red="%K{red}%F{yellow}"
  
     # Flags
@@ -132,7 +149,7 @@ function custom_build_prompt {
             fi
         fi
         prompt+=$(enrich_append ${is_on_a_tag} "${omg_is_on_a_tag_symbol} ${tag_at_current_commit}" "${black_on_red}")
-        prompt+="%k%F{208}%k%f
+        prompt+="%k%F{202}%k%f
 ${omg_second_line}"
     else
         prompt="${omg_ungit_prompt}"
