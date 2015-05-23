@@ -1,5 +1,5 @@
 : ${omg_ungit_prompt:="%{$fg_no_bold[yellow]%}%3~ %{$reset_color%}"}
-: ${omg_second_line:="%~ %F{245}•%f "}
+: ${omg_second_line:="%~%F{245}•%f"}
 : ${omg_is_a_git_repo_symbol:=''}
 : ${omg_has_untracked_files_symbol:=''}        #                ?    
 : ${omg_has_adds_symbol:=''}
